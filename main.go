@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// test comment for practice
 func Add(a, b int) int {
 	return a + b
 }
