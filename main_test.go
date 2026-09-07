@@ -12,7 +12,7 @@ var (
 func TestFiles(t *testing.T) {
 	dir, err := os.Getwd()
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Error(err.Error())
 	}
 
 	files, err := os.ReadDir(dir)
