@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	requiredFiles = []string{"README.md", "main.go", "main_test.go", "go.mod", ".gitignore", ".idea", ".git"}
+	requiredFiles = []string{"README.md", "main.go", "main_test.go", "go.mod", ".gitignore", ".idea", ".git", ".github"}
 )
 
 func Contains[T comparable](s []T, e T) bool {
