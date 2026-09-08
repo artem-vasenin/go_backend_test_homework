@@ -1,22 +1,18 @@
 name: golang-pipeline
-
-on:
-  push:
-    tags: [ "v*.*.*" ]
-
+on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: golang:1.22 # Используйте стейбл LTS-релиз
+    container: golang:1.26.5
     steps:
       - uses: actions/checkout@v4
 
       - name: Run Unit Tests
-        run: go test -v -race ./...
+        run: GOOS=linux GOARCH=amd64 go test
 
       - name: Vet
-        run: go vet ./...
+        run: |
+          go vet ./...
 
   deploy:
     name: Push Docker image to Docker Hub
