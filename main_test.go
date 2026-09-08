@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	requiredFiles = []string{"README.md", "main.go", "main_test.go", "go.mod"}
+	requiredFiles = []string{"README.md", "main.go", "main_test.go", "go.mod", ".gitignore", ".idea", ".git"}
 )
 
 func Contains[T comparable](s []T, e T) bool {
@@ -23,7 +23,7 @@ func TestCheckRequiredFiles(t *testing.T) {
 
 	dir, err := os.Getwd()
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Error(err.Error())
 	}
 
 	files, err := ioutil.ReadDir(dir)

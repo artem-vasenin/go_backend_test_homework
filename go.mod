@@ -1,3 +1,3 @@
-module test-repo
+module github.com/artem-vasenin/go_backend_test_homework
 
-go 1.19
+go 1.26.5
